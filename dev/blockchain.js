@@ -46,11 +46,7 @@ Blockchain.prototype.addTransactionToPendingTransactions = function(transactionO
     this.pendingTransactions.push(transactionObj);
 
     return this.getLastBlock()['index'] + 1
-
 }
-
-
-
 
 Blockchain.prototype.hashBlock = function(previousBlockHash, currentBlockData, nonce){
     const dataAsString = previousBlockHash + nonce.toString() + JSON.stringify(currentBlockData);
